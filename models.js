@@ -47,6 +47,7 @@ const BlogPosts = {
         }
     },
     update: function(updatedPost) {
+        console.log(updatedPost);
         const { id } = updatedPost;
         const postIndex = this.posts.findIndex(
             post => post.id === updatedPost.id);
