@@ -55,24 +55,24 @@ describe('Blog Post', function() {
             });
     });
 
-    // it('should return an error if property is missing on POST', function() {
-    //     const newPost = {
-    //         title: 'Working with Integration',
-    //         publishDate: '04/01/2016',
-    //         content: 'Cupcake ipsum dolor sit. Amet tootsie roll fruitcake cupcake'
-    //     };
-    //     return chai.request(app)
-    //         .post('/blog-posts')
-    //         .send(newPost)
-    //         .catch(function(err) {
-    //             console.log('we are finding an error');
-    //             // console.log(err.response);
-    //             expect(err).to.have.status(400);
-    //             expect(err.response.error.text).to.be.a('string');
-    //             console.log(err);
+    it('should return an error if property is missing on POST', function() {
+        const newPost = {
+            title: 'Working with Integration',
+            publishDate: '04/01/2016',
+            content: 'Cupcake ipsum dolor sit. Amet tootsie roll fruitcake cupcake'
+        };
+        return chai.request(app)
+            .post('/blog-posts')
+            .send(newPost)
+            .catch(function(err) {
+                console.log('we are finding an error');
+                // console.log(err.response);
+                expect(err).to.have.status(400);
+                expect(err.response.error.text).to.be.a('string');
+                console.log(err);
 
-    //         });
-    // });
+            });
+    });
 
     it('should update blog posts on PUT', function() {
         const updateData = {
