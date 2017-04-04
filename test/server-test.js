@@ -4,6 +4,7 @@ const chaiHttp = require('chai-http');
 const { app, runServer, closeServer } = require('../server');
 
 const should = chai.should();
+const expect = chai.expect;
 
 chai.use(chaiHttp);
 
@@ -54,12 +55,31 @@ describe('Blog Post', function() {
             });
     });
 
+    it('should return an error if property is missing on POST', function() {
+        const newPost = {
+            title: 'Working with Integration',
+            publishDate: '04/01/2016',
+            content: 'Cupcake ipsum dolor sit. Amet tootsie roll fruitcake cupcake'
+        };
+        return chai.request(app)
+            .post('/blog-posts')
+            .send(newPost)
+            .catch(function(err) {
+                console.log('we are finding an error');
+                // console.log(err.response);
+                expect(err).to.have.status(400);
+                expect(err.response.error.text).to.be.a('string');
+                console.log(err);
+
+            });
+    });
+
     it('should update blog posts on PUT', function() {
         const updateData = {
             title: 'We are adding something new',
             author: 'MRRM',
             publishDate: '05/02/2016',
-            content: 'Bacon ipsum dolor amet ea eu leberkas ham venison burgdoggen dolore excepteur in dolore ipsum anim drumstick boudin'
+            content: 'Bacon ipsum dolor amet ea eu leberkas ham'
         };
 
         return chai.request(app)
@@ -71,7 +91,7 @@ describe('Blog Post', function() {
                     .send(updateData);
             })
             .then(function(res) {
-                res.should.have.status(200);
+                res.should.have.status(201);
                 res.should.be.json;
                 res.body.should.be.a('object');
                 res.body.should.deep.equal(updateData);

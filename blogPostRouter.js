@@ -20,7 +20,6 @@ router.post('/', jsonParser, (req, res) => {
         const field = requiredFields[i];
         if (!(field in req.body)) {
             const message = `You are missing the \`${field}\` in request body`
-            console.error(message);
             return res.status(400).send(message);
         }
     }
@@ -31,7 +30,6 @@ router.post('/', jsonParser, (req, res) => {
 // Delete recipes (by id)!
 router.delete('/:id', (req, res) => {
     BlogPosts.delete(req.params.id);
-    console.log(`Deleted the post \`${req.params.id}\``);
     res.status(204).end();
 });
 
@@ -41,7 +39,6 @@ router.put('/:id', jsonParser, (req, res) => {
         const field = requiredFields[i];
         if (!(field in req.body)) {
             const message = `You are missing the \`${field}\` in request body`
-            console.error(message);
             return res.status(400).send(message);
         }
     }
@@ -49,10 +46,8 @@ router.put('/:id', jsonParser, (req, res) => {
         const message = (
             `Request path id (${req.params.id}) and request body id `
             `(${req.body.id}) do not match`);
-        console.error(message);
         return res.status(400).send(message);
     }
-    console.log(`Updating blog post \`${req.params.id}\``);
     const updatedPost = BlogPosts.update({
         id: req.body.id,
         title: req.body.title,
@@ -60,7 +55,7 @@ router.put('/:id', jsonParser, (req, res) => {
         author: req.body.author,
         publishDate: req.body.publishDate
     });
-    res.status(204).json(updatedPost);
+    res.status(201).json(updatedPost);
 })
 
 module.exports = router;
