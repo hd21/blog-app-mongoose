@@ -1,1 +1,30 @@
 GET http://localhost:8080/blog-posts
+###
+GET http://localhost:8080/blog-posts/58ee04da63bd632af0119df4
+###
+POST http://localhost:8080/blog-posts
+Content-Type: application/json
+
+{
+    "title": "12 things -- you won't believe #4",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "author": {
+          "firstName": "Laser",
+          "lastName": "Taser"
+      }
+}
+
+###
+PUT http://localhost:8080/blog-posts/58ee04da63bd632af0119df4
+Content-Type: application/json
+
+{
+    "title": "12 things -- you won't believe #4",
+    "content": "Lorem ipsum dolor sit amet",
+    "author": {
+          "firstName": "Basil",
+          "lastName": "Thyme"
+      }
+}
+###
+DELETE http://localhost:8080/blog-posts/58ee04da63bd632af0119df4
