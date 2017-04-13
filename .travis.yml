@@ -1,7 +1,0 @@
-language: node_js
-node_js: node
-deploy:
-  provider: heroku
-  app: safe-beach-57511
-  on:
-    repo: hd21/blog-app-mongoose
