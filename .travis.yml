@@ -2,8 +2,6 @@ language: node_js
 node_js: node
 deploy:
   provider: heroku
-  api_key:
-    secure: nTz6Q1QxQO2VzFFu5gy8PRFkBK68dFIgF+CvmaHNX7G4wBpCsXFgbaTW/oPnpAmtdbMrGiR4meGp0um0CSmk2H5P2m7NCr98ju7fyGdI7l5h29K5WGNbYQYKoZj/JvFpNyRqDkW1G6Udu+fokTO0wzOyIpW2O/qmwO1VeGG89cowzXagJmDvPEITg+s2os1yvUtdVvA2QDf4mEsbIa30BqvIKQKjLY3TJt2zAR1k4xkKsl9y3R4sgbAT4eFjIGsIJ8wV0m6sz4IbmY1tHfnvJvdrov/CxRqXBb6h7fyILRMwj/+s+ejKaCFkKLWTnJ7oQRwnHl6diyK/teazkfEHU1MlCp+d0zcFQFO+z/3WViQ4R4btOTL4WjqU35WDY5azrYgqVImv0ziilGwiT9MZ7dJdE2QEBazN8ujs8Y4pxDoLSBtgudHzanggAi4FGglkGVJd9Rh2Gt/JPbvje419S84HsjNAJCzP95+crxR74iukv8+GCst1mYCGine4hSSTHxiZz7kiNmCIxgL9QxUXuJCjC7alTe+8e012F1LhURFqtvXeN8+/PHUqr1qr8Q20ciZlZAuA5ZIRmXf/p5CgfvfWzFiP3ehEZbLhQQop8HvrWseHWPiUDu4nQ2VUN1Dqw8338HPnnUCjTQ44zDaWM+aJ0eYmKdhTtAi5tVEf/7A=
-  app: thawing-lake-76940
+  app: safe-beach-57511
   on:
-    repo: hd21/blog-api
+    repo: hd21/blog-app-mongoose
