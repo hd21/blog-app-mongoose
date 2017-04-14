@@ -4,7 +4,7 @@
     "description": "Building a CRUD API for blogging site",
     "main": "server.js",
     "scripts": {
-        "start": "nodemon server.js",
+        "start": "node server.js",
         "test": "mocha ./test"
     },
     "author": "",
